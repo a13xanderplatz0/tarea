@@ -1,0 +1,12 @@
+# Archivos de sistema
+.DS_Store
+.env
+
+# Archivos de configuración IDE
+.vscode/
+.idea/
+
+# Logs y archivos temporales
+*.log
+*.tmp
+```

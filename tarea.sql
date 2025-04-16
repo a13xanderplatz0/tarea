@@ -81,14 +81,14 @@ CREATE TABLE usuario (
     fecha_registro DATE DEFAULT SYSDATE,
     ultimo_acceso DATE,
     universidad VARCHAR2(100),
-    logros VARCHAR2(50)
+    logros VARCHAR2(50) CHECK (logros IN ('Novato', 'Avanzado', 'Experto'))
 );
 
 -- Tabla RECURSOS
 CREATE TABLE recursos (
     id_recurso NUMBER PRIMARY KEY,
     titulo VARCHAR2(200) NOT NULL,
-    descriptcion VARCHAR2(500),
+    descripcion VARCHAR2(500),  -- Corregido de "descriptcion" a "descripcion"
     tipo VARCHAR2(20) CHECK (tipo IN ('APUNTE', 'EXAMEN', 'PDF', 'WORD')),
     archivo VARCHAR2(100),
     fecha_publicacion DATE DEFAULT SYSDATE,
@@ -144,12 +144,12 @@ VALUES (seq_usuario.NEXTVAL, 'Luisa Fernández', 'luisa.fernandez@example.com',
         'Universidad Privada', 'Avanzado');
 
 -- Insertar recursos
-INSERT INTO recursos (id_recurso, titulo, descriptcion, tipo, archivo, fecha_publicacion, curso)
+INSERT INTO recursos (id_recurso, titulo, descripcion, tipo, archivo, fecha_publicacion, curso)
 VALUES (seq_recurso.NEXTVAL, 'Apuntes de Matemáticas', 'Conceptos básicos de álgebra lineal', 
         'APUNTE', 'matematicas.pdf', 
         TO_DATE('2023-02-15', 'YYYY-MM-DD'), 'Matemáticas I');
 
-INSERT INTO recursos (id_recurso, titulo, descriptcion, tipo, archivo, fecha_publicacion, curso)
+INSERT INTO recursos (id_recurso, titulo, descripcion, tipo, archivo, fecha_publicacion, curso)
 VALUES (seq_recurso.NEXTVAL, 'Examen Final 2022', 'Examen de física con soluciones', 
         'EXAMEN', 'fisica_examen.pdf', 
         TO_DATE('2023-01-20', 'YYYY-MM-DD'), 'Física General');
