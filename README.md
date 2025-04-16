@@ -23,5 +23,3 @@ Este proyecto implementa una base de datos para gestionar recursos educativos, i
 2. Ejecutar inserciones de datos de prueba
 3. Verificar con consultas de ejemplo
 
-## Autor
-[Tu nombre]
