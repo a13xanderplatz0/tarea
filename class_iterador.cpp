@@ -2,7 +2,7 @@
 #include <algorithm> // Incluido por la implementación original, aunque no se usa en el código descomentado.
 
 // --- Clase Iterador Simple ---
-// Abstrae el puntero para trabajar con rangos de datos de forma genérica.
+
 template <typename T>
 class Iterador {
 private:
@@ -12,25 +12,22 @@ public:
     // Constructor.
     Iterador(T* p) : puntero(p) {}
 
-    // Operador de desreferencia: Permite acceder al valor del elemento.
+  
     T& operator*() const {
         return *puntero;
     }
 
-    // Operador de incremento (prefijo): Mueve el iterador al siguiente elemento.
+    
     Iterador& operator++() {
         ++puntero;
         return *this;
     }
 
-    // Operador de comparación: Compara si dos iteradores no son iguales.
+  
     bool operator!=(const Iterador& otro) const {
         return puntero != otro.puntero;
     }
 
-    // --- Funcionalidad adicional para la lógica del Bubble Sort ---
-    // Este operador permite crear un nuevo iterador que apunta al siguiente elemento.
-    // Es útil para la comparación de elementos adyacentes.
     Iterador operator+(int n) const {
         return Iterador(puntero + n);
     }
@@ -57,7 +54,7 @@ public:
 
 ---
 
-### Clase de Ordenamiento (`ordena`)
+
 
 // Esta clase template usa un tipo de dato (T) y un operador de orden (O).
 template <class T, class O>
