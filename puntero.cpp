@@ -1,7 +1,31 @@
 #include <iostream>
 #include <algorithm>
 using namespace std;
+template <typename T>
+class Iterador {
+private:
+    T* puntero; 
 
+public:
+    // Constructor
+    Iterador(T* p) : puntero(p) {}
+
+    // Desreferencia: Obtiene el valor del elemento actual.
+    T& operator*() const {
+        return *puntero;
+    }
+
+    // Incremento: Mueve el iterador al siguiente elemento.
+    Iterador& operator++() {
+        ++puntero;
+        return *this;
+    }
+
+    // Comparación: Verifica si dos iteradores apuntan al mismo lugar.
+    bool operator!=(const Iterador& otro) const {
+        return puntero != otro.puntero;
+    }
+};
 
 //struct ascendente{
     
