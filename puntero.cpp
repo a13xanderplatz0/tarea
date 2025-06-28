@@ -2,6 +2,13 @@
 #include <algorithm>
 using namespace std;
 
+
+//struct ascendente{
+    
+    //bool operator()(const int& a, const int& b) const {
+       // return a < b;
+    //}
+//};
 class ascendente {
 public:
     bool operator()(const int& a, const int& b) const {
